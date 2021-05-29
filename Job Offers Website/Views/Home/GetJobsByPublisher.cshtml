@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Job_Offers_Website.Models.JobsViewModel>
+
+
+<div>
+    <p> this page to List jobs that have been submit by user To publisher </p>
+</div>
+@foreach (var gr in Model)
+{
+    <h3>@gr.JobTitle</h3>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>
+                Researcher's name
+            </th>
+            <th>
+                The text of the message
+            </th>
+            <th>
+                Sending Date
+            </th>
+        </tr>
+        @foreach(var item in gr.Items)
+        {
+            <tr>
+                <td>
+                    @item.user.UserName
+                </td>
+                <td>
+                    @item.Message
+                </td>
+                <td>
+                    @item.ApplyDate
+                </td>
+            </tr>
+        }
+    </table>
+}

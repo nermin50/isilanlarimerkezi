@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Job_Offers_Website.Models.ApplyForJob> 
+@{
+    ViewBag.Title = "GetAllAppliedJobs";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>GetAllAppliedJobs</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.JobId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.job.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplyDate)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.JobId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.job.JobTitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Message)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.user.UserName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ApplyDate)
+    </td>
+
+</tr>
+    }
+
+</table>
